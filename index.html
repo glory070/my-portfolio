@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>My Portfolio</title>
+  <title>Premium Portfolio</title>
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
@@ -16,7 +16,7 @@
     }
 
     body {
-      background: #0b1220;
+      background: #070b14;
       color: white;
       scroll-behavior: smooth;
     }
@@ -27,9 +27,10 @@
       justify-content: space-between;
       padding: 20px 10%;
       background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(10px);
+      backdrop-filter: blur(12px);
       position: sticky;
       top: 0;
+      z-index: 1000;
     }
 
     nav h2 {
@@ -40,30 +41,48 @@
       color: white;
       text-decoration: none;
       margin-left: 20px;
-      font-size: 14px;
     }
 
     /* HERO */
     .hero {
+      height: 90vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
       text-align: center;
-      padding: 100px 20px;
+      padding: 20px;
     }
 
     .hero h1 {
-      font-size: 50px;
+      font-size: 55px;
       background: linear-gradient(90deg, #38bdf8, #a78bfa);
       -webkit-background-clip: text;
       color: transparent;
     }
 
-    .hero p {
+    .typing {
       margin-top: 10px;
+      font-size: 18px;
       color: #cbd5e1;
+      border-right: 2px solid #38bdf8;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(30, end) forwards, blink 0.8s infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 280px }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
     }
 
     .btn {
       margin-top: 25px;
-      display: inline-block;
       padding: 12px 25px;
       background: #38bdf8;
       color: black;
@@ -74,8 +93,7 @@
     }
 
     .btn:hover {
-      transform: scale(1.05);
-      background: #0ea5e9;
+      transform: scale(1.1);
     }
 
     /* SECTIONS */
@@ -99,12 +117,18 @@
       background: rgba(255,255,255,0.05);
       padding: 20px;
       border-radius: 15px;
-      transition: 0.3s;
+      transition: 0.4s;
       border: 1px solid rgba(255,255,255,0.1);
     }
 
     .card:hover {
-      transform: translateY(-8px);
+      transform: translateY(-10px);
+    }
+
+    .card img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 10px;
     }
 
     /* CONTACT */
@@ -112,7 +136,18 @@
       text-align: center;
     }
 
-    /* WHATSAPP BUTTON */
+    .hire {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 12px 25px;
+      background: #22c55e;
+      color: black;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* WHATSAPP */
     .whatsapp {
       position: fixed;
       bottom: 20px;
@@ -120,8 +155,8 @@
       background: #25D366;
       padding: 15px;
       border-radius: 50px;
-      color: white;
       text-decoration: none;
+      color: white;
       font-weight: bold;
     }
 
@@ -129,76 +164,75 @@
       text-align: center;
       padding: 20px;
       background: rgba(255,255,255,0.05);
-      margin-top: 40px;
     }
   </style>
 </head>
 
 <body>
 
-  <!-- NAV -->
-  <nav>
-    <h2>MyPortfolio</h2>
-    <div>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
-
-  <!-- HERO -->
-  <div class="hero">
-    <h1>Your Name</h1>
-    <p>Web Developer | Designer | Freelancer</p>
-    <a class="btn" href="#projects">View My Work</a>
+<nav>
+  <h2>MyPortfolio</h2>
+  <div>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
   </div>
+</nav>
 
-  <!-- ABOUT -->
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      I am a passionate web developer focused on building modern, responsive,
-      and high-quality websites for businesses and personal brands.
-    </p>
-  </section>
+<div class="hero">
+  <h1>Your Name</h1>
+  <div class="typing">I build modern websites that convert 🚀</div>
+  <a class="btn" href="#projects">View Work</a>
+</div>
 
-  <!-- PROJECTS -->
-  <section id="projects">
-    <h2>Projects</h2>
+<section id="about">
+  <h2>About Me</h2>
+  <p>I am a web developer focused on building high-quality business websites, landing pages, and portfolios that help brands grow online.</p>
+</section>
 
-    <div class="grid">
-      <div class="card">
-        <h3>Business Website</h3>
-        <p>Modern website for a local business with contact features.</p>
-      </div>
+<section id="projects">
+  <h2>Projects</h2>
 
-      <div class="card">
-        <h3>Portfolio Website</h3>
-        <p>Personal portfolio built with HTML, CSS and animations.</p>
-      </div>
+  <div class="grid">
 
-      <div class="card">
-        <h3>Landing Page</h3>
-        <p>High-converting landing page design for marketing.</p>
-      </div>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" />
+      <h3>Business Website</h3>
+      <p>Clean and responsive website for local businesses.</p>
     </div>
-  </section>
 
-  <!-- CONTACT -->
-  <section id="contact" class="contact">
-    <h2>Contact Me</h2>
-    <p>Email: paulglory140email@gmail.com</p>
-    <p>WhatsApp: +2347030635603</p>
-  </section>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" />
+      <h3>Landing Page</h3>
+      <p>High conversion landing page design.</p>
+    </div>
 
-  <footer>
-    © 2026 Your Name. All rights reserved.
-  </footer>
+    <div class="card">
+      <img src="https://via.placeholder.com/400x250" />
+      <h3>Portfolio Site</h3>
+      <p>Modern personal portfolio with animations.</p>
+    </div>
 
-  <!-- WHATSAPP FLOAT -->
-  <a class="whatsapp" href="https://wa.me/2347030635603" target="_blank">
-    WhatsApp
+  </div>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Work With Me</h2>
+  <p>Email: paulglory140@gmail.com</p>
+  <p>WhatsApp: +2347030635603</p>
+
+  <a class="hire" href="https://wa.me/2347030635603" target="_blank">
+    Hire Me on WhatsApp
   </a>
+</section>
+
+<footer>
+  © 2026 My Portfolio. Built with passion.
+</footer>
+
+<a class="whatsapp" href="https://wa.me/234XXXXXXXXXX" target="_blank">
+  Chat
+</a>
 
 </body>
 </html>
